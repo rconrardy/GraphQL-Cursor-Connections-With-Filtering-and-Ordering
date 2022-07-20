@@ -1,0 +1,14 @@
+schema: schema.graphql
+generates:
+  ./resolvers-types.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+    config:
+      federation: true
+      useIndexSignature: true
+      mapperTypeSuffix: Model
+      mappers:
+        User: "@prisma/client/index.d#User"
+        UserEdge: "./src/types/Mappers#UserEdge"
+        UserConnection: "./src/types/Mappers#UserConnection"

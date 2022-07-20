@@ -1,0 +1,101 @@
+enum OrderByDirection {
+  ASCENDING
+  DESCENDING
+}
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String!
+  endCursor: String!
+}
+type User {
+  id: ID
+  points: Int
+  name: String
+  isAdmin: Boolean
+  createdAt: String
+}
+type UserEdge {
+  cursor: String!
+  node: User!
+}
+type UserConnection {
+  pageInfo: PageInfo!
+  edges: [UserEdge!]!
+}
+type Query {
+  users(
+    first: Int
+    after: String
+    filterBy: UserFilterBy
+    orderBy: UserOrderBy
+  ): UserConnection
+}
+input FilterByBoolean {
+  equals: Boolean
+  not: Boolean
+}
+input FilterByID {
+  contains: ID
+  endsWith: ID
+  equals: ID
+  gt: ID
+  gte: ID
+  in: [ID]
+  lt: ID
+  lte: ID
+  mode: ID
+  not: ID
+  notIn: [ID]
+  startsWith: ID
+}
+input FilterByInt {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int]
+  lt: Int
+  lte: Int
+  not: Int
+  notIn: [Int]
+}
+input FilterByString {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String]
+  lt: String
+  lte: String
+  mode: String
+  not: String
+  notIn: [String]
+  startsWith: String
+}
+input FilterByDate {
+  equals: String
+  gt: String
+  gte: String
+  in: [String]
+  lt: String
+  lte: String
+  not: String
+  notIn: [String]
+}
+input UserFilterBy {
+  and: [UserFilterBy!]
+  or: [UserFilterBy!]
+  id: FilterByID
+  points: FilterByInt
+  name: FilterByString
+  isAdmin: FilterByBoolean
+  createdAt: FilterByDate
+}
+input UserOrderBy {
+  then: UserOrderBy
+  points: OrderByDirection
+  name: OrderByDirection
+  isAdmin: OrderByDirection
+  createdAt: OrderByDirection
+}
