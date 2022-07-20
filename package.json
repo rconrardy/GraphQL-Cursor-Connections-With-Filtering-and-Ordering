@@ -1,0 +1,31 @@
+{
+  "name": "graphql-cursor-connections-with-filtering-and-ordering",
+  "author": "Riley Conrardy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.ts",
+    "generate": "prisma generate && graphql-codegen",
+    "generate:prisma": "prisma generate",
+    "generate:graphql": "graphql-codegen"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.1.0",
+    "apollo-server-express": "^3.10.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "graphql": "^16.5.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.9.1",
+    "@graphql-codegen/typescript": "^2.7.2",
+    "@graphql-codegen/typescript-resolvers": "^2.7.2",
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.6",
+    "nodemon": "^2.0.19",
+    "prisma": "^4.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}

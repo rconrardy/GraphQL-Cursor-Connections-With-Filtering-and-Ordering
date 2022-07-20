@@ -1,0 +1,31 @@
+Arguments: 
+  /home/conrardy/.nvm/versions/node/v16.4.0/bin/node /usr/share/yarn/bin/yarn.js add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-resolvers @types/express @types/node nodemon prisma ts-node typescript
+
+PATH: 
+  /home/conrardy/.cache/cloud-code/installer/google-cloud-sdk/bin:/home/conrardy/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/home/conrardy/.local/bin:/home/conrardy/.rover/bin:/home/conrardy/.nvm/versions/node/v16.4.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/Microsoft.WindowsTerminal_1.13.11432.0_x64__8wekyb3d8bbwe:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/conra/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/conra/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  16.4.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/conrardy/projects/graphql-cursor-connections-with-filtering-and-ordering/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
