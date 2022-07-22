@@ -1,34 +1,24 @@
 import { prismaClient } from "../..";
-import {
-  InputMaybe,
-  UserFilterBy,
-  UserOrderBy,
-} from "../../../resolvers-types";
 import { mapUserCursorToPrismaWhereInput } from "../../mappers/user/cursor/mapUserCursorToPrismaWhereInput";
 import { mapUserFilterByToPrismaWhereInput } from "../../mappers/user/filter-by/mapUserFilterByToPrismaWhereInput";
 import { mapUserOrderByToPrismaOrderByWithRelationInputs } from "../../mappers/user/order-by/mapUserOrderByToPrismaOrderByWithRelationInputs";
-import { UserCursor } from "../../types/UserCursor";
+import { UserQueryOptions } from "../../types/UserQueryOptions";
 
 /**
  * Get the {User}s
  *
- * @param options - Options that specify the shape of the query
+ * @param options - The {UserQueryOptions}
  *
  * @returns The {User}s
  */
-export const getUsers = async (options?: {
-  filterBy?: InputMaybe<UserFilterBy>;
-  cursor?: UserCursor;
-  limit?: number;
-  orderBy?: InputMaybe<UserOrderBy>;
-}) =>
+export const getUsers = async (options?: UserQueryOptions) =>
   await prismaClient.user.findMany({
     where: {
       AND: [
         mapUserFilterByToPrismaWhereInput(options?.filterBy),
-        mapUserCursorToPrismaWhereInput(options?.cursor),
+        mapUserCursorToPrismaWhereInput(options?.after),
       ],
     },
-    take: options?.limit,
+    take: options?.first,
     orderBy: mapUserOrderByToPrismaOrderByWithRelationInputs(options?.orderBy),
   });

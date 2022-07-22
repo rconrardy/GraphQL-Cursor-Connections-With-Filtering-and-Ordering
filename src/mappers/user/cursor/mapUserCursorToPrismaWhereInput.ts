@@ -43,10 +43,13 @@ export const mapUserCursorToPrismaWhereInput = (
   // Create the {Prisma.UserWhereInput}
   const key = orderByEntries[0][0];
   const nodeValue = cursor.node[key];
+  const isNull = nodeValue === null;
   const isAscending = orderByEntries[0][1] === OrderByDirection.Ascending;
   return {
     OR: [
-      { [key]: isAscending ? { gt: nodeValue } : { lt: nodeValue } },
+      isNull
+        ? { [key]: { not: nodeValue } }
+        : { [key]: isAscending ? { gt: nodeValue } : { lt: nodeValue } },
       {
         AND: [
           { [key]: { equals: nodeValue } },
